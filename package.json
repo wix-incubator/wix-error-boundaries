@@ -1,0 +1,39 @@
+{
+  "name": "wix-error-boundaries",
+  "version": "0.1.0",
+  "description": "Bounding errors by scope or context of running code",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel index.js --out-dir dist",
+    "test": "eslint && jest",
+    "release": "wnpm-release --no-shrinkwrap",
+    "prepublish": "npm run-script build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zivl/wix-error-boundaries.git"
+  },
+  "keywords": [
+    "error-boundaries"
+  ],
+  "author": "Ziv Levy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zivl/wix-error-boundaries/issues"
+  },
+  "homepage": "https://github.com/zivl/wix-error-boundaries#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jest": "^21.14.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^22.4.2",
+    "prettier": "^1.11.1",
+    "wnpm-ci": "*"
+  }
+}
