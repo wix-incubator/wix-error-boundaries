@@ -11,7 +11,7 @@ npm install -save wix-error-boundaries
 ```
 ## Usage
 
-```
+```javascript
 import errorBoundaries from 'wix-error-boundaries'
 ```
 
@@ -23,12 +23,12 @@ The `errorBoundaries` function accept the following parameters:
 For the following example, let's assume got an API with functions called `foo` and `fireErrorEvent`.
 
 Now, let's define some scopes:
-```
+```javascript
 const MY_SCOPE = 'myCodeZone'
 const OTHER_SCOPE = 'otherCodeZone'
 ```
 and initialize the error boundaries with our `errorHandler`:
-```
+```javascript
 const {myCodeZone, otherCodeZone} = errorBoundaries({
 	scopes: [MY_SCOPE, OTHER_SCOPE],
 	errorHandler: (error, scope) => {
@@ -49,7 +49,7 @@ const {myCodeZone, otherCodeZone} = errorBoundaries({
 
 Next, to use those wrappers you can do the following<br>
 
-```
+```javascript
 const scopedFoo = otherCodeZone(foo)
 .
 .
