@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel index.js --out-dir dist",
-    "test": "eslint && jest",
+    "test": "eslint index.js test/*.test.js && jest",
     "release": "wnpm-release --no-shrinkwrap",
     "prepublish": "npm run-script build"
   },
