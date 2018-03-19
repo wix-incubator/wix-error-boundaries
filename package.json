@@ -1,6 +1,6 @@
 {
   "name": "wix-error-boundaries",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bounding errors by scope or context of running code",
   "main": "dist/index.js",
   "scripts": {
