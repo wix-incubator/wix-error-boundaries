@@ -35,5 +35,8 @@
     "jest": "^22.4.2",
     "prettier": "^1.11.1",
     "wnpm-ci": "*"
+  },
+  "jest": {
+    "testURL": "http://localhost"
   }
 }
