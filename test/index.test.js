@@ -23,14 +23,13 @@ describe('Wix Error Boundaries Testing Suite', () => {
 		// asynchronous function
 		const underScopeBFunction = scopeBCodeZone(() => Promise.reject(errorRejected))
 
-		expect(() => underScopeAFunction()).toThrow(errorThrown)
+		expect(() => underScopeAFunction()).not.toThrow()
 		expect(myErrorHandler).toHaveBeenCalledTimes(1)
 		expect(myErrorHandler).toHaveBeenCalledWith(errorThrown, SCOPE_A)
-		await expect(underScopeBFunction()).rejects.toThrow(errorRejected)
+		await expect(underScopeBFunction()).resolves.toBeUndefined()
 		expect(myErrorHandler).toHaveBeenCalledTimes(2)
 		expect(myErrorHandler).toHaveBeenLastCalledWith(errorRejected, SCOPE_B)
 	 })
-
 
 	test('that all arguments are passed to the wrapped function by order', async () => {
 		const myErrorHandler = jest.fn()
@@ -46,6 +45,7 @@ describe('Wix Error Boundaries Testing Suite', () => {
 		expect(foo).toHaveBeenCalledTimes(1)
 		expect(foo).toHaveBeenCalledWith(1, 'string', true)
 	})
+
 	test('that the scoped wrapped function executing normally and returning value', async () => {
 		const myErrorHandler = jest.fn()
 		const multiply = (x, y) => x * y

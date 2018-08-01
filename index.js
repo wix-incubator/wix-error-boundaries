@@ -9,14 +9,12 @@ const errorScopingFactory = (scope, errorHandler) => func => (...args) => {
 		if (isPromise(result)) {
 			return result.catch(e => {
 				errorHandler(e, scope)
-				throw e
 			})
 		}
 
 		return result
 	} catch (e) {
 		errorHandler(e, scope)
-		throw e
 	}
 }
 
